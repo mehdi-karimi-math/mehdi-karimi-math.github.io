@@ -4,7 +4,19 @@
 
 
 <head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?ver=<?php echo rand(111,999)?>">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146641176-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146641176-1');
+</script>
+
+
 </head>
 
 <body  style="background-color:white " >
@@ -16,7 +28,7 @@
 </head>
 
 <header>
-<h1>DDS Users' Guide</h1>
+<h1>DDS 2.0 Users' Guide</h1>
 </header>
 
 <nav>
@@ -29,52 +41,117 @@
 
 
 
-
+<div style="position: absolute;
+  top: 100px;
+  left: 220px ">
+  
 <section>
 <p>   
 
-<font color="red" size="5"> DDS (Domain-Driven Solver) </font> is a
-  Matlab-based code for convex optimization problems given in the
+<font color="red" size="5"> DDS (Domain-Driven Solver)  Version 2.0</font> <br>
+  Matlab-based software package for convex optimization problems given in the
   <a href="https://arxiv.org/abs/1804.06925"> <font color="blue" >
-  Domain-Driven formulation </font>
-  </a>. In principle, every convex optimization problem can be
+  Domain-Driven form. </font>
+</a> <br>
+<!-- <font size="2" > If you are looking for Dynamically Dimensioned Search, another DDS in
+  the University of Waterloo, please go to <a
+  href="http://www.civil.uwaterloo.ca/btolson/software.aspx"> this
+  website. </a>  </font>   -->
+
+
+<!-- In principle, every convex optimization problem can be
   treated in the Domain-Driven setup. The current version of DDS
   solves a large class of
   problems including LP, SOCP, SDP, QCQP, nuclear-norm minimization,
   geometric programming, entropy programming, and more is being
-  added.
+added. -->
+
+
   </p>
   <p>
   <div class="b">
-  <font color="blue" >
  <ul style="font-family:verdana;  style="list-style-type:disc">
   <li> <a href="DDS-theory.html"> Theory behind the Domain-Driven
-  formulation </a> </li>
-  <li>Setup the DDS code</li>
-  <li>Type of constraints in the current version </li>
+   formulation </a> </li>
+    <li> <a href="DDS_users_guide_V2.pdf" onclick=”var that=this;_gaq.push([‘_trackEvent’,’Download’,’PDF’,this.href]);setTimeout(function(){location.href=that.href;},200);return false;”> DDS Users'
+  Guide (pdf)</a>, <a href="https://arxiv.org/abs/1908.03075"> arXiv </a> link
+  for citation. </li>
+  <li> <a href="downloadDDS.html"> Download and Install DDS software
+  package </a> </li>
+   <li> <a href="format.html"> How to use DDS </a> </li>
+  <li> <font color="FUCHSIA" size="4"> Types of function/set constraints that DDS solves: </font></li>
   <ul style="font-family:verdana;  style="list-style-type:square">
     
-    <li> Linear Programming (LP) and Second Order Cone Programming (SOCP)  </li>
-    <li> Semidefinite Programming (SDP)  </li>
-    <li> Quadratic-Constraint Quadratic-Programming (QCQP)  </li>
-    <li> Direct Sum of 2-dim Convex Sets (including geometric
+    <li> <a href="LP_SOCP.html"> Linear Programming (LP) and Second
+    Order Cone Programming (SOCP)  </a> </li>
+    <li>  <a href="SDP.html">  Semidefinite Programming (SDP) </a> </li>  <br> Constraints of
+    the form
+    \begin{eqnarray} \label{SDP-1}
+  F^i_0+x_1 F^i_1+ \ldots+x_n F^i_n \succeq 0, \ \ \ i=1,\ldots,\ell.
+\end{eqnarray}
+where \(F^i_j\)'s are \(n_i\)-by-\(n_i\) symmetric matrices.
+    
+	<li>  <a href="GPC.html">  Generalized Power Cone</a> </li>
+    <li>  <a href="QCQP.html">  Quadratic Constraints</a> </li>
+    <li>  <a href="2dim.html">  Direct Sum of 2-dim Convex Sets  </a> (including geometric
     programming and entropy programming)  </li>
-    <li> Epigraph of Matrix Norm (including nuclear norm minimization)
+    Every inequality of the form
+\begin{eqnarray} \label{intro-3}
+\sum_{i=1}^\ell \alpha_i f_i(a_i^\top x + \beta_i) + g^\top x + \gamma  \leq 0,  \ \ \ a_i, g \in \mathbb R^{n}, \ \ \beta_i, \gamma  \in \mathbb R,  \ \ i \in  \{1,\ldots,\ell\},
+\end{eqnarray}
+where \(\alpha_i \geq 0\) and  \(f_i(x)\), \(i \in
+    \{1,\ldots,\ell\}\), can be a univariate convex function such as
+    \(e^x\) or \(\ln(x)\). 
+    <li>  <a href="epi_Mtx_Norm.html">  Epigraph of Matrix Norm </a>  (including nuclear norm minimization)
     </li>
-    <li> Quantum Entropy </li>
+    Matrix constraints of the form
+    \begin{eqnarray} \label{EO2N-1}
+&& X-UU^\top \succeq 0,  \nonumber \\
+&& X=A_0+\sum_{i=1}^{\ell_1} x_i A_i, \nonumber \\
+&& U=B_0+\sum_{i=1}^{\ell_2} u_i B_i,
+\end{eqnarray}
+where \(A_i\), \(i \in  \{0,\ldots,\ell_1\}\), are \(m\)-by-\(m\) symmetric matrices, and \(B_i\), \(i \in  \{0,\ldots,\ell_2\}\), are \(m\)-by-\(n\) matrices.
+  <li> Vector Relative Entropy  </li>
+  Constraints involving the vector relative entropy function \(f: \mathbb R_{++}^\ell \oplus \mathbb R_{++}^\ell \rightarrow \mathbb R\) defined as 
+\[
+f(u,z):= \sum_{i=1}^{\ell} u_i\ln(u_i) - u_i\ln(z_i).
+\] 
+
+  <li> <a href="q_entropy.html">  Quantum Entropy  </a> </li>
+    Quantum entropy constraints of the form
+\begin{eqnarray} \label{eq:QE-1}
+  qe(A^i_0+x_1 A^i_1+ \cdots+x_n A^i_n) \leq  g_i^\top x+d_i, \ \ \ i\in\{1,\ldots,\ell\},
+\end{eqnarray}
+where \(qe(X):=\text{TR}(X\ln(X))\), and \(F^i_j\)'s are \(n_i\)-by-\(n_i\) symmetric matrices. 
+<li> <a href="q_rel_entropy.html">  Quantum Relative Entropy  </a> </li>
+    Quantum relative entropy constraints of the form
+\begin{eqnarray} 
+  qre(A^i_0+x_1 A^i_1+ \cdots+x_n A^i_n, B^i_0+x_1 B^i_1+ \cdots+x_n B^i_n) \leq  g_i^\top x+d_i, \ \ \ i\in\{1,\ldots,\ell\},
+\end{eqnarray}
+where \(qre(X):=\text{TR}(X\ln(X)-X\ln(Y))\), and \(A^i_j\), \(B^i_j\)'s are \(n_i\)-by-\(n_i\) symmetric matrices. 
+    <li> <a href="hyperbolic.html">  Hyperbolic Optimization  </a> </li>
+    Constraints of the form
+    \[
+    p(Ax+b) \geq 0,
+    \]
+    where \(p(x)\) is a hyperbolic polynomial. 
+    
   </ul>
 
 </ul>
-</font>
+
 </div>
 </p>
 </section>
 
+</div>
+
+</body>
+</html>
 
 <!--
 <section>
 <font color="red" size="6"> Coming soon! </font>
 </section>
-</body>
-</html>
+
 -->

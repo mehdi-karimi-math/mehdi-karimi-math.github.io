@@ -1,10 +1,12 @@
 
 <!DOCTYPE html>
+
+
 <html>
 
 
 <head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?ver=<?php echo rand(111,999)?>">
 </head>
 
 <body  style="background-color:white " >
@@ -23,36 +25,115 @@
 
 
 
-
+<div style="position: absolute;
+  top: 100px;
+  left: 220px ">
 
 <section>
-<h2> PhD project </h2>
+<h2> Convex Optimization, Domain-Driven Form </h2>
 <p>
-<font color="blue"> Title: </font> Convex Optimization via Domain-Driven Barriers and Primal-Dual Interior-Point Methods
+<font color="red">Convex optimization </font> is an important special case of mathematical optimization applications in a wide range of disciplines.
+Convex optimization's powerful and
+elegant theory has been coupled with faster and more reliable numerical linear algebra software and
+powerful computers to spread its applications over many fields such as (1) data science,(2) control theory and signal processing, 
+(3) relaxation and randomization for hard nonconvex problems, and (4) robust optimization.
 </p>
 <p>
-In my PhD project, my advisor and I introduced a general optimization
-setup, called <font color="red">Domain-Driven </font> , that covers many interesting classes of optimization. In my project that had a theoretical part and a practical part, we designed classes of primal-dual interior-point algorithms  for the problems in the Domain-Driven setup with the current best theoretical complexity bounds.  The complexity results are new for the infeasible-start model used. To obtain these results, we applied the machinery of self-concordance. In the practical part, we started to create a Matlab-based code, called DDS, that solves a large class of convex optimization problems the solutions of which are in great demand. Our code has the potential that many classes of problems arise in practice can be easily added to it.
+<pic>
+<img src="infea-str.jpg" alt="infea-start" style="width:420px;height:330px" class="center"> 
+</pic>
+
+We say a problem is in the <font color="red">Domain-Driven </font> form if the underlying convex set is given as the domain of a convex function
+which is a <font color="red"> self-concordant (s.c.) barrier</font>. We have designed and analyzed infeasible-start primal-dual interior-point algorithms for problems
+given in the Domain-Driven form. Infeasible-start means our algorithms can return the status of the given problem with robust certificates of 
+approximate optimality, unboundedness, and infeasibility.
+These algorithms are the foundation of a software packge <a href="DDS.html"> Domain-Driven Solver (DDS)</a>. 
+Even though we have meticulously implemented the Hessian-vector product for every constraint type, there are still many possibilities to explore.
+To improve the performance of DDS and invent 
+new optimization techniques, I am also working to leverage second-order information.
+
+
 </p>
+
+<!--
 <p>
-Domain-Driven means our techniques are directly applied to the given good formulation without a forced reformulation in a conic form. Moreover, this approach also naturally handles the cone constraints and hence the conic form. 
-In the thesis, we showed how general the Domain-Driven setup is by providing several interesting classes of examples that our code DDS also accepts as input. LP, SOCP, and SDP are covered by the Domain-Driven setup. More generally, consider all convex cones with the property that both the cone and its dual admit efficiently computable self-concordant barriers. Then, our Domain-Driven setup can handle any conic optimization problem formulated using direct sums of these cones and their duals. Then, we show how to construct interesting convex sets as the direct sum of the epigraphs of univariate convex functions. This construction, as a special case, contains problems such as geometric programming, $p$-norm optimization, and entropy programming. Another interesting class of convex sets that (optimization over it) is contained in the Domain-Driven setup is the generalized epigraph of a matrix norm. This, as a special case, allows us to minimize the nuclear norm over a linear subspace that has applications in machine learning and big data. Domain-Driven setup contains the combination of all the above problems; for example, we can have a problem with LP and SDP constraints, combined with ones defined by univariate convex functions or the epigraph of a matrix norm.
+Domain-Driven means our techniques are directly applied to the given good formulation without a forced reformulation in a conic form. 
+Moreover, this approach also naturally handles the cone constraints and hence the conic form. 
+In the thesis, we showed how general the Domain-Driven setup is by providing several interesting classes 
+of examples that our code DDS also accepts as input. LP, SOCP, and SDP are covered by the Domain-Driven setup. More generally, 
+consider all convex cones with the property that both the cone and its dual admit efficiently computable self-concordant barriers. 
+Then, our Domain-Driven setup can handle any conic optimization problem formulated using direct sums of these cones and their duals. 
+Then, we show how to construct interesting convex sets as the direct sum of the epigraphs of univariate convex functions. 
+This construction, as a special case, contains problems such as geometric programming, $p$-norm optimization, and entropy programming. 
+Another interesting class of convex sets that (optimization over it) is contained in the Domain-Driven setup is the generalized 
+epigraph of a matrix norm. This, as a special case, allows us to minimize the nuclear norm over a linear subspace that has applications 
+in machine learning and big data. Domain-Driven setup contains the combination of all the above problems; for example, we can have a 
+problem with LP and SDP constraints, combined with ones defined by univariate convex functions or the epigraph of a matrix norm.
+</p>
+-->
+</section>
+
+<section>
+<h2> Domain-Driven Solver (DDS) </h2>
+<p>
+ We have released <a href="DDS.html"> DDS 2.0</a>
+on Nov 11th, 2020. DDS accepts many interesting classes of function/set constraints. You can solve several classes of convex optimization problems
+ using DDS 2.0, ranging from LP and SDP to 
+quantum entorpy and hyperbolic programming. DDS is also easily expandable, and by the discovery of a s.c. barrier, 
+a new set constraint can be added to DDS. 
+</p>
+</section>
+<section>
+<h2> Optimization of quantum entropy and quantum relative entropy </h2>
+<p>
+<pic>
+<img src="qu-inf.jpg" alt="qu-inf" style="width:350px;height:270px"> 
+</pic>
+Quantum entropy and quantum relative entropy have applications in quantum information processing. DDS 2.0 accepts constraints involving quantum entropy and quantum relative entropy 
+and significantly outperforms methods that approximate these functions by SDP constraints. Despite acceptable performance, there is still room in DDS for performance improvement. 
+The barrier function we use in DDS for quantum relative entropy is not a proven s.c. barrier. We are currently working to prove a conjectured s.c. barrier
+for the epigraph of quantum relative entropy function.  In the application part, there are many open questions mostly related to efficiently evaluating the derivatives of the barrier (matrix)
+functions used for quantum entropy and relative entropy.
 </p>
 
 </section>
+
+<section>
+<h2> Hyperbolic programming </h2>
+<p>
+<pic>
+<img src="HBP.jpg" alt="qu-inf" style="width:350px;height:270px"> 
+</pic>
+Hyperbolic programming has recently attracted attention for its connection to the sum-of-squares methods and generalized Lax conjecture. 
+Accepting hyperbolic constraints is a major contribution in DDS. DDS accepts polynomials in three different formats:
+ list of monomials, straight-line program, and determinantal representation. To scale DDS with the size of the input hyperbolic
+ polynomials in each format, some interesting open questions have to be answered. For example, for the straight-line program,
+ we are working to implement an automatic differentiation scheme for evaluating the derivatives of the polynomials. Automatic
+ differentiation has been studied extensively for its applications in machine learning.
+</p>
+
+</section>
+
 
 <section>
 <h2> Sum-of-Squares and SDP Complexity </h2>
 <p> 
-In addition to my PhD research, I have been working on a project with my advisor to use the theory of sum-of-squares of polynomials to attack the Turing machine complexity of semidefinite programs (SDP). Even though an approximate solution for an SDP can be found in polynomial time and having an SDP formulation is desirable in many applications, very little is known about the complexity of SDP in the Turing machine model. Even the question of whether SDP feasibility is in the NP class or not is open. In the first part of this project, we have been studying the complexity of SDP problems arise form the univariate nonnegative polynomials and trying to deepen our understanding of their structure. 
+In a very interesting theoretical project, we are using the theory of sum-of-squares of polynomials to attack the Turing machine complexity 
+of semidefinite programs (SDP). Even though an approximate solution for an SDP can be found in polynomial time and having an SDP formulation
+ is desirable in many applications, very little is known about the complexity of SDP in the Turing machine model. Even the question of whether
+ SDP feasibility is in the NP class or not is open. In the first part of this project, we have been studying the complexity of SDP problems
+ arise form the univariate nonnegative polynomials and trying to deepen our understanding of their structure. 
 </p>
 
 <p>
-Nonnegative polynomials and SOS problems have been studied for more than a century; however, numerous new applications in optimization and machine learning have made them very popular among optimizers. The SOS method has been used to improve guarantees for many approximations algorithms and become a new tool in computational complexity. To mention new applications in machine learning, this method has given new bounds for sparse vector recovery and dictionary learning.
+Nonnegative polynomials and SOS problems have been studied for more than a century; however, numerous new applications
+ in optimization and machine learning have made them very popular among optimizers. The SOS method has been used to
+ improve guarantees for many approximations algorithms and become a new tool in computational complexity. To mention
+ new applications in machine learning, this method has given new bounds for sparse vector recovery and dictionary learning.
 </p>
 </section>
 
-
+</div>
 
 </body>
 </html>

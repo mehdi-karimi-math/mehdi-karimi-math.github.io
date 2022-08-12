@@ -1,0 +1,83 @@
+h1 {
+
+    font-family: Georgia;
+
+}
+h2 {
+    text-decoration: underline;
+    font-family: Georgia;
+    color: Green;
+    font-size: 130%;
+}
+
+p {
+
+    font-family:verdana;
+    line-height: 1.6;
+}
+
+p2 {
+
+    font-family:verdana;
+    font-size: 120%;
+
+}
+
+nav {
+    line-height:30px;
+    background-color:Gainsboro;
+    height:1200px;
+    width:200px;
+    float:left;
+    padding:5px;
+font-family:verdana;
+}
+
+section {
+    width:1000px;
+    float:left;
+    padding:10px;	 	 
+}
+
+pic {
+    line-height:30px;
+    background-color:white;
+    height:310px;
+    width:410px;
+    float:left;
+    padding:5px;	      
+}
+
+header {
+    background-color:Sienna;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+
+div.b {
+    line-height: 1.6;
+}
+
+a:link {
+    color: blue; 
+    text-decoration: none;
+}
+
+a:visited {
+color: blue;
+text-decoration: none;
+background-color: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    align: center;
+    text-align: center;
+    border-spacing: 5px;
+}

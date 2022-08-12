@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body  style="background-color:white " >
+
+<header>
+<h1>Mehdi Karimi</h1>
+</header>
+
+<nav>
+<a href="index.html"> Home </a> <br>
+<a href="Research.html"> Research </a> <br>
+<a href="papers.html"> Publications </a> <br>
+<a href="talks.html"> Talks </a> <br>
+<a href="DDS.html"> DDS Code </a> <br>
+</nav>
+
+
+
+
+
+<section>
+<h2> PhD project </h2>
+<p>
+<font color="blue"> Title: </font> Convex Optimization via Domain-Driven Barriers and Primal-Dual Interior-Point Methods
+</p>
+<p>
+In my PhD project, my advisor and I introduced a general optimization
+setup, called <font color="red">Domain-Driven </font> , that covers many interesting classes of optimization. In my project that had a theoretical part and a practical part, we designed classes of primal-dual interior-point algorithms  for the problems in the Domain-Driven setup with the current best theoretical complexity bounds.  The complexity results are new for the infeasible-start model used. To obtain these results, we applied the machinery of self-concordance. In the practical part, we started to create a Matlab-based code, called DDS, that solves a large class of convex optimization problems the solutions of which are in great demand. Our code has the potential that many classes of problems arise in practice can be easily added to it.
+</p>
+<p>
+Domain-Driven means our techniques are directly applied to the given good formulation without a forced reformulation in a conic form. Moreover, this approach also naturally handles the cone constraints and hence the conic form. 
+In the thesis, we showed how general the Domain-Driven setup is by providing several interesting classes of examples that our code DDS also accepts as input. LP, SOCP, and SDP are covered by the Domain-Driven setup. More generally, consider all convex cones with the property that both the cone and its dual admit efficiently computable self-concordant barriers. Then, our Domain-Driven setup can handle any conic optimization problem formulated using direct sums of these cones and their duals. Then, we show how to construct interesting convex sets as the direct sum of the epigraphs of univariate convex functions. This construction, as a special case, contains problems such as geometric programming, $p$-norm optimization, and entropy programming. Another interesting class of convex sets that (optimization over it) is contained in the Domain-Driven setup is the generalized epigraph of a matrix norm. This, as a special case, allows us to minimize the nuclear norm over a linear subspace that has applications in machine learning and big data. Domain-Driven setup contains the combination of all the above problems; for example, we can have a problem with LP and SDP constraints, combined with ones defined by univariate convex functions or the epigraph of a matrix norm.
+</p>
+
+</section>
+
+<section>
+<h2> Sum-of-Squares and SDP Complexity </h2>
+<p> 
+In addition to my PhD research, I have been working on a project with my advisor to use the theory of sum-of-squares of polynomials to attack the Turing machine complexity of semidefinite programs (SDP). Even though an approximate solution for an SDP can be found in polynomial time and having an SDP formulation is desirable in many applications, very little is known about the complexity of SDP in the Turing machine model. Even the question of whether SDP feasibility is in the NP class or not is open. In the first part of this project, we have been studying the complexity of SDP problems arise form the univariate nonnegative polynomials and trying to deepen our understanding of their structure. 
+</p>
+
+<p>
+Nonnegative polynomials and SOS problems have been studied for more than a century; however, numerous new applications in optimization and machine learning have made them very popular among optimizers. The SOS method has been used to improve guarantees for many approximations algorithms and become a new tool in computational complexity. To mention new applications in machine learning, this method has given new bounds for sparse vector recovery and dictionary learning.
+</p>
+</section>
+
+
+
+</body>
+</html>

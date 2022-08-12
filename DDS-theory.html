@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body  style="background-color:white " >
+
+<head>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+<header>
+<h1>DDS Users' Guide</h1>
+</header>
+
+<nav>
+<font color="red"> Creators: </font> <br>
+&ensp; <a href="index.html"> Mehdi Karimi </a> <br>
+&ensp; <a href="http://www.math.uwaterloo.ca/~ltuncel/"> Levent Tuncel
+</a> <br>
+<br> <br>
+&ensp; <a href="DDS.html"> Main page </a> 
+</nav>
+
+
+
+
+
+<section>  
+<p>
+The DDS code is implementing a primal-dual infeasible-start interior-point algorithm
+for convex optimization problems, specifically designed for problems
+given in the <a href="https://arxiv.org/abs/1804.06925">
+  Domain-Driven formulation </a>. 
+</p>
+  <p> 
+  A convex optimization problem is said to be in the Domain-Driven setup if it is in the form
+\begin{eqnarray} \label{main-p}
+\inf _{x} \{\langle c,x \rangle :  Ax \in D\},
+\end{eqnarray}
+where \(x \mapsto Ax : \mathbb R^n \rightarrow \mathbb R^m \) is a
+  linear embedding, with \(A\) and \(c \in \mathbb R^n\) are given,
+  and \(D \subset \mathbb R^m\) is a convex set defined as the closure
+  of the domain of a given <font
+color="red">\(\vartheta\)-self-concordant (s.c.) barrier </font>
+\(\Phi\). S.c. functions and s.c. barriers were introduced in the
+seminal book of <a
+href="https://epubs.siam.org/doi/book/10.1137/1.9781611970791"> Nesterov
+and Nemirovskii </a>. 
+</ul> 
+</p>
+
+<p>
+A s.c. barrier is a convex function whose second derivative regulates its third and first derivatives. 
+Every open convex set is the domain of a s.c. barrier. Thus, in principle, every convex optimization
+problem can be treated in the Domain-Driven setup. In applications,
+the restrictive part of the above Definition  is that a
+"computable" s.c. barrier is not necessarily available for a general convex set. However, for many interesting
+convex sets (each of which allows us to handle a class of convex
+optimization problems), we know how to construct an efficient
+s.c. barrier. Specifically,
+the feasible region of many classes of problems that arise in practice
+is the direct sum of small dimensional convex sets with known,
+computable s.c. barriers. In the case of linear programming, for example,   
+consider the 1-dimensional set \(\{z \in \mathbb R: z \geq \beta\}\) for
+\(\beta \in \mathbb R\). It is well-known that \(-\ln(z-\beta)\) is a
+s.c. barrier for this set.
+Using this simple function and the fact that if convex sets \(D_1\)
+and \(D_2\) have s.c. barriers \(f_1\) and \(f_2\), respectively, then
+\(f_1+f_2\) is a s.c. barrier
+for the direct sum of \(D_1\) and \(D_2\), we can construct a s.c. barrier for any polyhedron; for \(A \in \mathbb R^{m \times n}\) and \(b \in \mathbb R^m\), a s.c. barrier for
+\[
+\{x \in \mathbb R^n: Ax \leq b\}=\{x \in \mathbb R^n: Ax \in D\},
+\]
+where \(D:=b-\mathbb R^m_+\),   is \(-\sum_{i=1}^m \ln(b_i-a_i^\top x)\),
+where \(a_i^\top\) is the \(i\)th row of \(A\). This discussion for LP
+exemplifies the fact that knowing a s.c. barrier
+for small dimensional convex sets combined with the direct sum operator lets us solve problems with an arbitrarily large number of variables and constraints (of the same type).  
+</p>
+
+<p>
+The power of the Domain-Driven setup is further accentuated when we consider the possibility of direct summing (or alternatively, intersecting) convex sets of different types. 
+In the following, we show many set constraints/functions as the building blocks of a problem in the Domain-Driven setup. We start by showing that the Domain-Driven setup covers the popular optimization over symmetric cones. Many of these s.c. functions can be found in Nesterov and Nemirovski's book.
+</p>
+
+
+
+<h2> LP, SOCP, and SDP </h2>
+<p>  optimization over symmetric cones is a special case
+of the Domain-Driven setup. The following table shows the
+constraints that specify \(D\) and a s.c. barrier associated with the
+convex set defined by the constraint.
+</p>
+
+<table style="width:70%">
+<caption> LP, SOCP, and SDP constraints and the corresponding s.c.
+barriers.  \(\mathbb S^n\) is the set of n-by-n symmetric
+matrices and \(A \preceq B\) for \(A,B \in \mathbb S^n\) means \(B-A\) 
+is positive semidefinite. </caption>
+<tr> <th>  class </th>  <th>  constraint </th> <th> s.c. barrier 
+\(\Phi\)  </th>  </tr>
+<tr> <td>  LP </td>  <td>  \(z \leq \beta, \ \ z, \beta \in \mathbb
+  R\) </td> <td> \(-\ln(\beta-z)\)</td>  </tr>
+  <tr> <td>  SOCP </td>  <td>  \(|z\| \leq t, \ \ z \in \mathbb R^n, \ \ t \in \mathbb R\) </td> <td> \(-\ln(t^2 - z^\top z)\)</td>  </tr>
+  <tr> <td>  SDP </td>  <td>  \(Z \preceq B, \ \ Z,B \in \mathbb S^n\) </td> <td> \(-\ln(\det(B-Z))\)</td>  </tr>
+</table>
+<p>
+For example, if our problem has a constraint of the form \(a^\top x
+\leq \beta\) for \(a \in \mathbb R^n, \beta \in \mathbb R\), the
+convex set defined by this constraint
+is the set of \(x \in \mathbb R^n\) such that \(a^\top x \in \{z: z \leq \beta\}\). 
+</p>
+
+</section>
+
+
+<!--
+<section>
+<font color="red" size="6"> Coming soon! </font>
+</section>
+</body>
+</html>
+-->

@@ -64,13 +64,18 @@ a:link {
     text-decoration: none;
 }
 
+a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
 a:visited {
 color: blue;
 text-decoration: none;
 background-color: none;
 }
 
-a:hover {
+a:hover:not(.active) {
     text-decoration: underline;
 }
 

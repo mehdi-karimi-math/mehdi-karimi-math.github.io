@@ -66,7 +66,8 @@ a:link {
 
 a.active {
   background-color: #04AA6D;
-  color: white;
+  display: block;
+  padding: 8px 16px;
 }
 
 a:visited {
@@ -79,22 +80,7 @@ a:hover:not(.active) {
     text-decoration: underline;
 }
 
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
 
-li a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
 
 
 table, th, td {

@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body  style="background-color:white " >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+<header>
+<h1>DDS Users' Guide</h1>
+</header>
+
+<nav>
+<font color="red"> Creators: </font> <br>
+&ensp; <a href="index.html"> Mehdi Karimi </a> <br>
+&ensp; <a href="http://www.math.uwaterloo.ca/~ltuncel/"> Levent Tuncel
+</a> <br>
+<br> <br>
+&ensp; <a href="DDS.html"> Main page </a> 
+</nav>
+
+
+
+
+
+<section>
+<h2> Constraints definded by epigraph of univariate convex
+functions </h2> 
+<p>
+DDS accepts constraints of the form
+\begin{eqnarray}
+\sum_{i=1}^\ell \alpha_i f_i(a_i^\top x + \beta_i) + g^\top x + \gamma  \leq 0,  \ \ \ a_i, g \in \mathbb R^{n}, \ \ \beta_i, \gamma  \in \mathbb R,  \ \ i \in  \{1,\ldots,\ell\},
+\end{eqnarray}
+where \(\alpha_i \geq 0\) and  \(f_i(x)\), \(i \in
+\{1,\ldots,\ell\}\), can be any function from the following Table
+<table style="width:30%">
+<tr> <th> type <th>  f(z)  </th>  </tr>
+<tr> <td> 1 </td> <td> \(-\ln(z)\) </td>  </tr>
+<tr> <td> 2 </td> <td> \(e^z\) </td>  </tr>
+<tr> <td> 3 </td> <td> \(z \ln(z)\) </td>  </tr>
+<tr> <td> 4 </td> <td> \(|z|^p, \ p \geq 1\) </td>  </tr>
+<tr> <td> 5 </td> <td> \(-z^p, \ z>0, \ 0 \leq p \leq 1\) </td>  </tr>
+<tr> <td> 6 </td> <td> \(\frac 1z, \ z >0 \) </td>  </tr>
+</table>
+</p>
+<p>
+By using this simple structure, we can model many interesting
+optimization problems. Geometric programming (GP) and entropy
+programming (EP) with many applications in engineering are constructed
+with constraints of the above form when \(f_i(z)=e^z\) for \(i\in\{1,\ldots,\ell \}\) and \(f_i(z)=z\ln(z)\) for \(i\in\{1,\ldots,\ell \}\), respectively.  The other functions with \(p\) powers let us solve optimization problems related to \(p\)-norm minimization. 
+</p>
+<p>
+Let us assume that we want to add the following \(s\) constraints to our code
+\begin{eqnarray*}
+\sum _{type} \sum_{i=1}^{\ell_{type}^j} - \alpha_i^{j,type} f_{type}((a_i^{j,type})^\top x + \beta_i^{j,type}) + g_{j}^ \top x + \gamma_{j}   \leq 0,  \ \ \ \ j=1,\ldots,s.
+\end{eqnarray*}
+The \(type\) of each function is given in the above table.
+The abbreviation we use for these constraints is TD. Hence, if the
+\(k\)th input block are the constraints of the bove form, then we have <b>cons{k,1}='TD'</b>. 
+
+<b> cons{k,2} </b> is a cell array of MATLAB with \(s\) rows, each row represents one constraint. For the \(j\)th constraint we have:
+</p>
+<p>
+<div class="b">
+<ul style="font-family:verdana;  style="list-style-type:disc">
+<li> <b> cons{k,2}{j,1} </b> is a matrix with two columns: the first column shows the type of a function from the above table and
+ the second column shows the number of that function in the constraint. Let us say that in the \(j\)th constraint, we have
+\(l_{2}^j\) functions of type 2 and  \(l_{3}^j\) functions of type 3, then we have
+\begin{eqnarray}
+\text{cons\{k,2\}\{j,1\}} =\left [\begin{array} {ccc}  2 & l_{2}^j  \\ 3  & l_3^j \end{array} \right ].
+\end{eqnarray}
+The types can be in any order, but the functions of the same type are consecutive and the order must match with the rows of \(A\) and \(b\).
+ </li>
+ <li> <b> cons{k,2}{j,2} </b> is a vector with the coefficients of the functions in a constraint. 
+ Note that the coefficients must be in the same order as their corresponding rows in \(A\) and \(b\). If in the \(j\)th constraint we 
+have 2 functions of type 2 and 1 function of type 3, it starts as
+\begin{eqnarray}
+\text{cons\{k,2\}\{j,2\}}=[\alpha_1^{j,2},  \alpha_2^{j,2}, \alpha_1^{j,3}, \cdots].
+\end{eqnarray}
+ 
+ </li>
+</ul>
+</div>
+
+
+<p>
+To add the rows to \(A\), for each constraint \(j\), we first add \(g_{j}\), then \(a_i^{j,type}\)'s in the order that matches 
+<b>cons{k,2}</b>.  We do the same thing for vector \(b\) (first \(\gamma_j\), then \(\beta_i^{j,type}\)'s). The part of \(A\) and \(b\) corresponding to the \(j\)th constraint is as follows if we have for example five types
+\begin{eqnarray}
+\text{A}=\left [ \begin{array} {c} g_j^\top \\[.3em] a_1^{j,1} \\ \vdots \\  a_{l_1^j}^{j,1}\\ \vdots \\ a_1^{j,5} \\ \vdots \\  a_{l_5^j}^{j,5} \end{array}\right], \ \ \ \text{b}=\left [ \begin{array} {c} \gamma_j \\[.3em]  \beta_1^{j,1} \\ \vdots \\  \beta_{l_1^j}^{j,1} \\ \vdots \\ \beta_1^{j,5} \\ \vdots \\  \beta_{l_5^j}^{j5} \end{array}\right]
+\end{eqnarray}
+</p>
+
+<h2> Example </h2>
+<p>
+Assume that we want to solve
+\begin{eqnarray}
+&\min&  c^\top x  \nonumber \\
+&\text{s.t.}&  -\ln(x_2+2x_3+55) + 2e^{x_1+x_2+1} + x_1 -2 \leq 0,  \nonumber \\
+&&                -3\ln(x_1+2x_2+3x_3-30) + e^{-x_3-3} -x_3 +1 \leq 0, \nonumber \\
+&&                 x \geq 0.
+\end{eqnarray}
+For this problem, we define:
+\begin{eqnarray*}
+&&\text{cons\{1,1\}='LP'}, \ \ \text{cons\{1,2\}}=[3], \\ 
+&& \text{cons\{2,1\}='TD'}, \ \   \text{cons\{2,2\}}=\left\{ \left[\begin{array} {ccc} 1 & 1 \\ 2 & 1\end{array} \right ], [1 \ \ 2] \ ; \ \  \left[\begin{array} {ccc} 1 &1 \\  2 & 1\end{array} \right ],  [3 \ \ 1] \right\},  \\
+&&\text{A\{1,1\}}=\left [ \begin{array} {ccc}-1& 0& 0 \\ 0 & -1 & 0 \\0 & 0 & -1 \end{array}\right], \ \ \ 
+\text{b\{1,1\}}=\left [ \begin{array} {c}  0 \\ 0 \\ 0 \end{array}\right], \\
+&&\text{A\{2,1\}}=\left [ \begin{array} {ccc} 1 & 0 & 0\\  0 & 1 & 2 \\  1 & 1 & 0 \\  0 & 0 & -1\\ 1 & 2 & 3\\  0 & 0 & -1 \end{array}\right], \ \ \ 
+\text{b\{2,1\}}=\left [ \begin{array} {c}  -2 \\ 55 \\ 1 \\ 1  \\  -30 \\ -3 \end{array}\right].
+\end{eqnarray*}
+
+</p>
+</section>
+

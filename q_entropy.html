@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body  style="background-color:white " >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+<header>
+<h1>DDS Users' Guide</h1>
+</header>
+
+<nav>
+<font color="red"> Creators: </font> <br>
+&ensp; <a href="index.html"> Mehdi Karimi </a> <br>
+&ensp; <a href="http://www.math.uwaterloo.ca/~ltuncel/"> Levent Tuncel
+</a> <br>
+<br> <br>
+&ensp; <a href="DDS.html"> Main page </a> 
+</nav>
+
+
+<div style="position: absolute;
+  top: 100px;
+  left: 220px ">
+
+
+<section>
+<h2> Quantum Entropy </h2>
+<p>
+Let \(qe(X):=\text{TR}(X\ln(X))\) and consider \(\ell\) quantum entropy constraints of the form
+\begin{eqnarray} \label{eq:QE-1}
+% &\min& c^\top x \nonumber \\
+  qe(F^i_0+x_1 F^i_1+ \cdots+x_n F^i_n) \leq  g_i^\top x+d_i, \ \ \ i\in\{1,\ldots,\ell\}.
+\end{eqnarray}
+\(F^i_j\)'s are \(n_i\)-by-\(n_i\) symmetric matrices. 
+To input these constraints to DDS as the \(k\)th block, we define:
+\begin{eqnarray} \label{eq:QE-4} 
+&&\text{cons\{k,1\}='QE'}, \ \ \text{cons\{k,2\}}=[n_1, \ldots,n_\ell], \nonumber \\
+&&\text{A\{k,1\}}:=\left [\begin{array}{c} g_1^\top \\ \text{sm2vec}(F^1_1), \cdots, \text{sm2vec}(F^1_n)  \\ \vdots \\ g_\ell^\top \\ \text{sm2vec}(F^\ell_1), \cdots, \text{sm2vec}(F^\ell_n)\end{array} \right ], \ \ \ \text{b\{k,1\}}:=\left [ \begin{array}{c} d_1 \\ \text{sm2vec}(F^1_0)\\ \vdots \\ d_\ell \\ \text{sm2vec}(F^\ell_0) \end{array} \right].
+\end{eqnarray}
+</p>
+  
+
+</section>
+
+</div>
+
+</body>
+</html>

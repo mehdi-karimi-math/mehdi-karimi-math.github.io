@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body  style="background-color:white " >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+<header>
+<h1>DDS Users' Guide</h1>
+</header>
+
+<nav>
+<font color="red"> Creators: </font> <br>
+&ensp; <a href="index.html"> Mehdi Karimi </a> <br>
+&ensp; <a href="http://www.math.uwaterloo.ca/~ltuncel/"> Levent Tuncel
+</a> <br>
+<br> <br>
+&ensp; <a href="DDS.html"> Main page </a> 
+</nav>
+
+
+<div style="position: absolute;
+  top: 100px;
+  left: 220px ">
+
+
+<section>
+<h2> Hyperbolic Optimization </h2> 
+<p>
+Consider a hyperbolic polynomial constraint of the form
+\begin{eqnarray} \label{eq:hyper-4}
+% p(Ax+b) \leq 0, \ \  i \in \{1,\ldots,\ell\}. 
+p(Ax+b) \geq 0.
+\end{eqnarray}
+To input this constraint to DDS as the \(k\)th block, \(A\) and \(b\)
+are defined as before, and different parts of <b>cons</b> are defined
+as follows: <br><br>
+
+<b>cons{k,1}='HB' </b>, <br>
+<b>cons{k,2}= </b> number of variables in \(p(x)\). <br>
+<b>cons{k,3} </b> is the polynomial matrix <b> poly </b> that can be given as one of the three formats. <br>
+<b>cons{k,4} </b> is the format of polynomial that can be <b>'monomial</b>, <b>'straight_line'</b>, or <b>'determinant'</b>. <br>
+<b>cons{k,5} </b> is the direction of hyperbolicity or a vector in the interior of the hyperbolicity cone. 
+</p>
+
+<p> For seeing the details and also the three different formats of
+giving a polynomial as input, please see the  <a href="DDS_users_guide.pdf">
+user's guide <a>. 
+
+</section>
+
+</div>
+
+</body>
+</html>

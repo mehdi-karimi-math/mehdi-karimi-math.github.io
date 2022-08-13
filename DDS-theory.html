@@ -4,15 +4,19 @@
 
 
 <head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?ver=<?php echo rand(111,999)?>">
 </head>
 
 <body  style="background-color:white " >
 
 <head>
-<script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 
 <header>
@@ -29,7 +33,9 @@
 </nav>
 
 
-
+<div style="position: absolute;
+  top: 100px;
+  left: 220px ">
 
 
 <section>  
@@ -85,8 +91,11 @@ for small dimensional convex sets combined with the direct sum operator lets us 
 </p>
 
 <p>
-The power of the Domain-Driven setup is further accentuated when we consider the possibility of direct summing (or alternatively, intersecting) convex sets of different types. 
-In the following, we show many set constraints/functions as the building blocks of a problem in the Domain-Driven setup. We start by showing that the Domain-Driven setup covers the popular optimization over symmetric cones. Many of these s.c. functions can be found in Nesterov and Nemirovski's book.
+The power of the Domain-Driven setup is further accentuated when we consider the possibility of direct summing (or alternatively, intersecting) 
+convex sets of different types. 
+As you can see in the users' guide, Domain-Driven form covers many set constraints/functions. 
+In the following we show two popular  examples. 
+Many of these s.c. functions can be found in Nesterov and Nemirovski's book.
 </p>
 
 
@@ -117,13 +126,47 @@ convex set defined by this constraint
 is the set of \(x \in \mathbb R^n\) such that \(a^\top x \in \{z: z \leq \beta\}\). 
 </p>
 
+<h2> Direct sum of 2-dimensional sets </h2>
+<p>
+The Domain-Driven setup allows inequalities of the form
+\begin{eqnarray} \label{intro-3}
+\sum_{i=1}^\ell \alpha_i f_i(a_i^\top x + \beta_i) + g^\top x + \gamma  \leq 0,  \ \ \ a_i, g \in \mathbb R^{n}, \ \ \beta_i, \gamma  \in \mathbb R,  \ \ i \in  \{1,\ldots,\ell\},
+\end{eqnarray}
+where \(\alpha_i \geq 0\) and  \(f_i(x)\), \(i \in
+\{1,\ldots,\ell\}\), can be any univariate convex function whose
+epigraph is a 2-dimensional set equipped with a known
+s.c. barrier. Three popular examples are given in the following table,
+and several more can be found in Nesterov and Nemirovski's book. The
+fact that constraints of the above  form fit into the Domain-Driven setup is implied by the following relation:
+\begin{eqnarray} \label{eq:DD-example-1}
+\begin{array}{rcl}
+&&\left \{  x : \sum_{i=1}^\ell \alpha_i f_i(a_i^\top x + \beta_i) + g^\top x + \gamma \leq 0 \right \}   \\
+&=&\left \{  x :  \exists u \in \mathbb R^\ell \ \text{such that} \ \sum_{i=1}^\ell \alpha_i u_i + g^\top x + \gamma \leq 0, \ \ f_i(a_i^\top x + \beta_i) \leq u_i, \ \forall  i \right \}.
+\end{array}
+\end{eqnarray}
+Note that Geometric Programming and Entropy Programming with vast
+applications in engineering are constructed with constraints of the
+above form when \(f_i(z)=e^z\) for \(i\in\{1,\ldots,\ell \}\) and
+\(f_i(z)=z\ln(z)\) for \(i\in\{1,\ldots,\ell \}\), respectively.
+
+<table style="width:70%">
+<caption>Some 2-dimensional convex sets and their s.c. barriers.  </caption>
+<tr> <th>   set \((z,t)\)  </th>  <th>  s.c. barrier \(\Phi(z,t)\) </th> </tr>
+<tr> <td>  \(e^z \leq t\) </td>  <td> \(-\ln(\ln(t)-z)-\ln(t)\) </td>  </tr>
+<tr> <td>  \(z \ln(z) \leq t, \ z>0\) </td>  <td>\(-\ln(\ln(t)-z)-\ln(t)\) </td>  </tr>
+<tr> <td> \(|z|^p \leq t, \ p \geq 1\) </td>  <td> \(-\ln(t^{\frac 2p} - z^2) - 2\ln(t)\) </td>  </tr>
+
+</table>
+
+</p>
 </section>
 
+</div>
+</body>
+</html>
 
 <!--
 <section>
 <font color="red" size="6"> Coming soon! </font>
 </section>
-</body>
-</html>
 -->

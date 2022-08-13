@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body  style="background-color:white " >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+<header>
+<h1>DDS Users' Guide</h1>
+</header>
+
+<nav>
+<font color="red"> Creators: </font> <br>
+&ensp; <a href="index.html"> Mehdi Karimi </a> <br>
+&ensp; <a href="http://www.math.uwaterloo.ca/~ltuncel/"> Levent Tuncel
+</a> <br>
+<br> <br>
+&ensp; <a href="DDS.html"> Main page </a> 
+</nav>
+
+
+<div style="position: absolute;
+  top: 100px;
+  left: 220px ">
+
+
+<section>
+<h2> Semidefnite programming (SDP) constraints: </h2>
+<p>
+Consider an SDP constraint in standard inequality form:
+\begin{eqnarray} \label{SDP-1}
+% &\min& c^\top x \nonumber \\
+  F^i_0+x_1 F^i_1+ \ldots+x_n F^i_n \succeq 0, \ \ \ i=1,\ldots,\ell.
+\end{eqnarray}
+\(F^i_j\)'s are \(n_i \times n_i\) symmetric matrices. The above
+optimization problem is in the matrix form. To formulate it in the DDS
+setup, we need to write it in the vector form. We have two functions coming with our code, \(sm2vec(\cdot)\) and \(vec2sm(\cdot)\). \(sm2vec(\cdot)\) takes an \(n \times n\) symmetric matrix and change it into a \(n^2\) vector by stacking the columns of it on top of one another. 
+\(vec2sm(\cdot)\) changes a vector into a symmetric matrix such that
+\begin{eqnarray}  \label{SDP-2}
+vec2sm(sm2vec(X))=X.
+\end{eqnarray}
+By this definition, it is easy to check that for any two \(n\times n\) symmetric matrices \(X\) and \(Y\) we have
+\begin{eqnarray} \label{SDP-3}
+\langle X,Y \rangle = sm2vec(X)^ \top sm2vec(Y).
+\end{eqnarray}
+To give the SDP consraint to DDS as the $k$th block, we define:
+\begin{eqnarray} \label{SDP-4}
+&&\text{A\{k,1\}}:=\left [\begin{array}{c} \text{sm2vec}(F^1_1), \cdots, \text{sm2vec}(F^1_n)  \\ \vdots \\ \text{sm2vec}(F^\ell_1), \cdots, \text{sm2vec}(F^\ell_n)\end{array} \right ], \ \ \ b\{k,1\}:=\left [ \begin{array}{c}\text{sm2vec}(F^1_0)\\ \vdots \\ \text{sm2vec}(F^\ell_0) \end{array} \right], \nonumber \\
+&& \text{cons\{k,1\}='SDP'}   \ \ \ \text{cons\{k,2\}}=[n^1,\ \ldots \ , n^\ell].
+\end{eqnarray}
+
+</p>
+
+<h2>  Example </h2>
+
+<p>
+Assume that we want to find scalars \(x_1\), \(x_2\), and \(x_3\) such that \(x_1+x_2+x_3 \geq 1\) and  the maximum eigenvalue of \(A_0+x_1A_1+x_2A_2+x_3A_3\) is minimized, where
+\begin{eqnarray} \nonumber 
+A_0=\left [ \begin{array}{ccc}2& -0.5& -0.6 \\ -0.5 & 2 & 0.4 \\-0.6 & 0.4 & 3 \end{array} \right], \ 
+A_1=\left [ \begin{array}{ccc}0& 1& 0 \\ 1 & 0 & 0 \\0 & 0 & 0 \end{array} \right], \ 
+A_2=\left [ \begin{array}{ccc}0& 0& 1 \\ 0 & 0 & 0 \\1 & 0 & 0 \end{array} \right], \
+A_3=\left [ \begin{array}{ccc}0& 0& 0 \\ 0 & 0 & 1 \\0 & 1 & 0 \end{array} \right].
+\end{eqnarray}
+We can write this problem as 
+\begin{eqnarray}
+&\min& t \nonumber \\
+&s.t.& -1+x_1+x_2+x_3 \geq 0, \nonumber \\
+&& tI-(A_0+x_1A_1+x_2A_2+x_3A_3) \succeq 0.
+\end{eqnarray}
+To solve this problem, we define:
+\begin{eqnarray*}
+\text{cons\{1,1\}='LP'}, \ \ \text{cons\{1,2\}}=[1], \ \  \text{cons\{2,1\}='SDP'}, \ \  \text{cons\{2,2\}}=[3], \\
+ \text{A\{1,1\}}=\left [\begin{array}{cccc} 1&1&1&0  \end{array} \right], \ \ \  \text{b\{1,1\}}=\left [\begin{array}{c} -1 \end{array} \right], \\
+ \text{A\{2,1\}}=\left [\begin{array}{cccc}  0&0&0&1 \\ -1&0&0&0 \\0&-1&0&0 \\ -1&0&0&0 \\ 0&0&0&1 \\0&0&-1&0 \\ 0 & -1& 0&0 \\ 0&0&-1&0 \\ 0&0&0&1 \end{array} \right], \ \ \  \text{b\{2,1\}}=\left [\begin{array}{c}  -2 \\ 0.5  \\0.6 \\ 0.5 \\ -2 \\-0.4 \\ 0.6 \\ -0.4 \\ -3 \end{array} \right],
+   \\
+ \text{c}=(0,0,0,1)^\top. 
+\end{eqnarray*}
+Then  DDS(c,A,b,cons) gives the answer \(x=(1.1265,0.6,-0.4,3)\), which means the minimum largest eigenvalue is \(3\). 
+</p>
+
+</section>
+
+</div>
+
+</body>
+</html>

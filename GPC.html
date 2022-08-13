@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body  style="background-color:white " >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+<header>
+<h1>DDS Users' Guide</h1>
+</header>
+
+<nav>
+<font color="red"> Creators: </font> <br>
+&ensp; <a href="index.html"> Mehdi Karimi </a> <br>
+&ensp; <a href="http://www.math.uwaterloo.ca/~ltuncel/"> Levent Tuncel
+</a> <br>
+<br> <br>
+&ensp; <a href="DDS.html"> Main page </a> 
+</nav>
+
+
+<div style="position: absolute;
+  top: 100px;
+  left: 220px ">
+
+
+<section>
+<h2> Generalized power cone constraints: </h2>
+<p>
+We define the \((m,n)\)-generalized power cone with parameter \(\alpha\) as
+\begin{eqnarray} \label{eq:GPC-1}
+K^{(m,n)}_\alpha := \left\{(s,u) \in \mathbb R_+^m \oplus \mathbb R^n: \prod_{i=1}^m s_i^{\alpha_i}  \geq \|u\|_2 \right\},
+\end{eqnarray} 
+where \(\alpha\) belongs to the simplex \(\{\alpha \in \mathbb R^m_+: \sum_{i=1}^m \alpha_i = 1\}\). Note that the rotated second
+ order cone is a special case where \(m=2\) and \(\alpha_1 = \alpha_2 = \frac 12\). Different s.c. barriers for this cone 
+ or special cases of it have been considered Chares' thesis.  The s.c. barrier DDS uses is:
+\begin{eqnarray} \label{eq:GPC-2}
+\Phi(s,u) = -\ln\left(\prod_{i=1}^m s_i^{2\alpha_i} - u^\top u \right) - \sum_{i=1}^{m} (1-\alpha_i) \ln(s_i).
+\end{eqnarray}
+To add generalized power cone constraints to DDS, we use the abbreviation 'GPC'. <br>
+
+To see the details of how to add a GPC constraint, please see the users' guide. 
+
+</p>
+
+
+</section>
+
+</div>
+
+</body>
+</html>

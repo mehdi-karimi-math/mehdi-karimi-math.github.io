@@ -76,9 +76,10 @@ problem with LP and SDP constraints, combined with ones defined by univariate co
 <section>
 <h2> Domain-Driven Solver (DDS) </h2>
 <p>
- We have released <a href="DDS.html"> DDS 2.0</a>
-on Nov 11th, 2020. DDS accepts many interesting classes of function/set constraints. You can solve several classes of convex optimization problems
- using DDS 2.0, ranging from LP and SDP to 
+ We have released <a href="DDS.html"> DDS 2.1</a>
+in July 2022. This version is accepted for publication in Mathematical Programming Computation. DDS accepts 
+  many interesting classes of function/set constraints. You can solve several classes of convex optimization problems
+ using DDS 2.1, ranging from LP and SDP to 
 quantum entorpy and hyperbolic programming. DDS is also easily expandable, and by the discovery of a s.c. barrier, 
 a new set constraint can be added to DDS. 
 </p>
@@ -89,8 +90,10 @@ a new set constraint can be added to DDS.
 <pic>
 <img src="qu-inf.jpg" alt="qu-inf" style="width:350px;height:270px"> 
 </pic>
-Quantum entropy and quantum relative entropy have applications in quantum information processing. DDS 2.0 accepts constraints involving quantum entropy and quantum relative entropy 
-and significantly outperforms methods that approximate these functions by SDP constraints. Despite acceptable performance, there is still room in DDS for performance improvement. 
+Quantum entropy (QE) and quantum relative entropy (QRE) have applications in quantum information processing. DDS accepts 
+  constraints involving quantum entropy and quantum relative entropy 
+and significantly outperforms methods that approximate these functions by SDP constraints. A new version DDS 2.2 
+  will be released soon which has been significantly improved for solving QRE problems.  Despite acceptable performance, there is still room in DDS for performance improvement. 
 The barrier function we use in DDS for quantum relative entropy is not a proven s.c. barrier. We are currently working to prove a conjectured s.c. barrier
 for the epigraph of quantum relative entropy function.  In the application part, there are many open questions mostly related to efficiently evaluating the derivatives of the barrier (matrix)
 functions used for quantum entropy and relative entropy.

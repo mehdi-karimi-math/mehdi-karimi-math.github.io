@@ -1,119 +1,127 @@
-
 <!DOCTYPE html>
-<html>
-
-
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css?ver=<?php echo rand(111,999)?>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mehdi Karimi | Assistant Professor | Optimization, Machine Learning, Applied AI">
+    <title>Mehdi Karimi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;}
+        body {background-color: #f9f9f9; color: #222; line-height: 1.6;}
+        header.hero {display: flex; align-items: center; justify-content: center; padding: 3rem 1rem; background: #002855; color: #fff;}
+        .hero img.profile-pic {border-radius: 50%; width: 180px; height: 220px; margin-right: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);}
+        .hero .intro h1 {font-size: 2.2rem; margin-bottom: .5rem;}
+        .hero .intro h3 {font-weight: 400; margin-bottom: .8rem; color: #ccc;}
+        nav.navbar {background-color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: .8rem 0;}
+        nav.navbar ul {display: flex; justify-content: center; list-style: none;}
+        nav.navbar ul li {margin: 0 1rem;}
+        nav.navbar ul li a {text-decoration: none; color: #002855; font-weight: 600; transition: color .2s;}
+        nav.navbar ul li a:hover, nav.navbar ul li a.active {color: #0073e6;}
+        section {padding: 3rem 10%; max-width: 1100px; margin: auto;}
+        section h2 {color: #002855; margin-bottom: 1rem;}
+        .projects .project {margin-bottom: 1.5rem; padding: 1rem; border-radius: 6px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);}
+        .projects .project h3 {color: #0073e6; margin-bottom: .4rem;}
+        .news ul {list-style: square; padding-left: 1.5rem;}
+        .contact p {margin-bottom: .5rem;}
+        .contact a {color: #0073e6; text-decoration: none;}
+        .contact a:hover {text-decoration: underline;}
+        footer {text-align: center; padding: 1rem; background: #002855; color: #fff; margin-top: 2rem;}
+    </style>
 </head>
+<body>
 
-<body  style="background-color:white " >
+    <header class="hero">
+        <img src="mehdi-k.jpg" alt="Mehdi Karimi" class="profile-pic">
+        <div class="intro">
+            <h1>Dr. Mehdi Karimi</h1>
+            <h3>Assistant Professor | Optimization | Machine Learning | AI</h3>
+            <p>Department of Mathematics, Illinois State University</p>
+            <p>Office: Stevenson Hall, STV 309B</p>
+            <p>Email: <a href="mailto:mkarim3@ilstu.edu">mkarim3@ilstu.edu</a></p>
+        </div>
+    </header>
 
-<header>
-<h1>Mehdi Karimi</h1>
-</header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="Research.html">Research</a></li>
+            <li><a href="papers.html">Publications</a></li>
+            <li><a href="talks.html">Talks</a></li>
+            <li><a href="DDS.html">DDS Code</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
-<a class="active" href="index.html"> Home </a> <br>
-<a href="Research.html"> Research </a> <br>
-<a href="papers.html"> Publications </a> <br>
-<a href="talks.html"> Talks </a> <br>
-<a href="DDS.html"> DDS Code </a> <br>
-</nav>
+    <section class="about">
+        <h2>About Me</h2>
+        <p>I am an Assistant Professor at the Department of Mathematics, Illinois State University. Previously, I was a Visiting Assistant Professor at Florida Tech, a Research Data Scientist at Cerebri AI, and a Postdoctoral Fellow at the <a href="https://math.uwaterloo.ca/combinatorics-and-optimization/">University of Waterloo</a>, working with <a href="http://www.math.uwaterloo.ca/~ltuncel/">Dr. Levent Tuncel</a>. My research interests include designing optimization algorithms, developing software packages like <a href="DDS.html">DDS</a>, and applying machine learning and deep learning techniques to solve complex engineering problems. You can read more about my research <a href="Research.html">here</a>.</p>
+        <p>I enjoy teaching and exploring innovative learning methods. I completed the <a href="https://uwaterloo.ca/centre-for-teaching-excellence/support-graduate-students/fundamentals-university-teaching-program">Fundamentals of University Teaching</a> and <a href="https://uwaterloo.ca/centre-for-teaching-excellence/support-graduate-students/certificate-university-teaching">Certificate of University Teaching</a> programs, focusing on peer-instruction in mathematics.</p>
+    </section>
 
-<div style="position: absolute;
-  top: 100px;
-  left: 220px ">
-  
-<section>
-<pic>
-<img src="mehdi-k.jpg" alt="Mehdi Karimi" style="width:270px;height:337px"> 
-</pic>
+    <section class="news">
+        <h2>News</h2>
+        <ul>
+            <li><span style="color: red;">March 2024:</span> Awarded a 2-year NSF grant titled "Intelligent Modeling and Parameter Selection in Distributed Optimization for Power Networks."</li>
+            <li><span style="color: red;">Jan 2024:</span> Released <a href="DDS.html">Domain-Driven Solver (DDS) 2.2</a>, with major updates for quantum relative entropy programming and scalability.</li>
+        </ul>
+    </section>
 
-<p2>   
-<b> Assistant Professor </b>  <br>
-<a href="https://math.illinoisstate.edu/"> 
-Department of Mathematics</a>  <br>
-Illinois State University <br> <br>
-  
-  <b><u> Contact   </u></b> <br><br>
-  
-  <b> Email: </b>  mkarim3 at ilstu.edu <br>
-  <b>  Office: </b> Stevenson Hall - STV 309B
- </p2>
+    <section class="education">
+        <h2>Education</h2>
+        <ul>
+            <li>Ph.D. in Combinatorics and Optimization, University of Waterloo, Canada (2013-2017)</li>
+            <li>Certificate in University Teaching, University of Waterloo, Canada (2013-2014)</li>
+            <li>M.Sc. in Combinatorics and Optimization, University of Waterloo, Canada (2011-2012)</li>
+            <li>Ph.D. and M.Sc. in Electrical Engineering, Sharif University of Technology, Iran (2004-2010)</li>
+            <li>B.Sc. in Electrical Engineering, Isfahan University of Technology, Iran (2000-2004)</li>
+        </ul>
+    </section>
 
+    <section class="interests">
+        <h2>Research Interests</h2>
+        <ul>
+            <li>Optimization and mathematical programming</li>
+            <li>Optimization software and applications</li>
+            <li>Interplay of optimization and machine learning</li>
+            <li>Hyperbolic programming and sum-of-squares techniques</li>
+            <li>Optimization in power systems, communications, and smart grids</li>
+            <li>Convex analysis and interior-point methods</li>
+        </ul>
+    </section>
 
-</section>
+    <section class="projects">
+        <h2>Selected Projects</h2>
+        <div class="project">
+            <h3><i class="fas fa-bolt"></i> Distributed Optimization for Power Networks (NSF)</h3>
+            <p>Leading an NSF-funded project involving 4 graduate students to develop decentralized optimization algorithms and graph-based partitioning techniques for modern power grids.</p>
+        </div>
+        <div class="project">
+            <h3><i class="fas fa-heartbeat"></i> Healthcare Optimization (OSF HealthCare)</h3>
+            <p>Collaborating with 3 faculty and 6 students to predict Medicare claim counts using SDOH data with ML/DL models, addressing challenges in missing data and feature integration.</p>
+        </div>
+        <div class="project">
+            <h3><i class="fas fa-tools"></i> Maintenance Optimization (CERL)</h3>
+            <p>Partnering with CERL to design reinforcement learning frameworks for predictive maintenance of large-scale infrastructure and military assets.</p>
+        </div>
+        <div class="project">
+            <h3><i class="fas fa-shield-alt"></i> Cybersecurity Risk Models</h3>
+            <p>Developing risk assessment models for cyber-physical vulnerabilities in smart grids and EV charging infrastructure, integrating optimization and statistical learning techniques.</p>
+        </div>
+    </section>
 
-<section>
-<h2> About me </h2>
-<p>   
+    <section class="contact">
+        <h2>Contact</h2>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:mkarim3@ilstu.edu">mkarim3@ilstu.edu</a></p>
+        <p><i class="fas fa-university"></i> Office: Stevenson Hall, STV 309B</p>
+        <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/mehdi-karimi" target="_blank">linkedin.com/in/mehdi-karimi</a></p>
+        <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/mehdi-karimi-math" target="_blank">github.com/mehdi-karimi-math</a></p>
+    </section>
 
-I am an Assistant Professor at the Department of Math, Illinois State University. Before, I was a Visiting Assistant Professor at Florida Tech, a Research Data Scientist at Cerebri AI, 
- and a Postdoctoral Fellow at the  <a href="https://math.uwaterloo.ca/combinatorics-and-optimization/"> 
-Department of Combinatorics and Optimization</a>, University of
-Waterloo, working with 
-<a href="http://www.math.uwaterloo.ca/~ltuncel/">Dr. Levent
-Tuncel</a>. My research interests are designing
-optimization algorithms, creating software packages including my DDS code for convex optimization
-problems, optimization of modern power networks, and implementing machine learning and deep learning algorithms for complicated engineering problems. You can read more about my research <a href="Research.html"> here</a>.
-</p>
-
-<p>
-I love teaching, specially performing new methods of learning and teaching in classrooms. I have completed 
-<a href="https://uwaterloo.ca/centre-for-teaching-excellence/support-graduate-students/fundamentals-university-teaching-program"> Fundamentals of 
-University Teaching</a> and <a href="https://uwaterloo.ca/centre-for-teaching-excellence/support-graduate-students/certificate-university-teaching">
-Certificate of University Teaching<a> programs. My Project was about implementing Peer-Instruction in mathematics. 
-</p>
-</section>
-
-  <section>
-  <h2> News </h2>
-            
-  <p>
-  <ul style="font-family:verdana;list-style-type:square">
-   <li> <span style="color: red;">March 2024:</span>  My 2-year NSF grant was awarded. The title is "Intelligent Modeling and Parameter 
-              Selection in Distributed Optimization for Power Networks". </li>
-    <li> <span style="color: red;">Jan 2024:</span> A new version of our optimization software package <a href="DDS.html"> Domain-Driven Solver (DDS) 2.2</a> was released in Januray 2024.
-This new version has extensive updates for quantum relative entropy (QRE) programming. 
-      The current version can solve much larger instances of QRE programming. </li>
-    </ul>             
-                <!-- Add more news items as needed -->
-            </p>
-        </section>
-
-  <section>
-<h2> Education </h2>
-<p>   
-<ul style="font-family:verdana;list-style-type:square">
- <li>Ph.D. in Combinatorics and Optimization, University of Waterloo,
-  Canada, Jan 2013-August 2017</li>
- <li>Certificate in University Teaching, University of Waterloo, Canada, May 2013-Dec 2014 </li>
- <li>Masters in Combinatorics and Optimization, University of Waterloo, Canada, May 2011-Dec 2012</li>
- <li>Ph.D. and Masters in Electrical Engineering, Sharif University, Iran, Sep 2004-Dec 2010</li>
- <li>Bachelor of Science in Electrical Engineering, Isfahan University of Technology, Iran, Sep 2000-Aug 2004  </li>
-</ul> 
-</p>
-</section>
-  
-<section>
-<h2> Research Interests </h2>
-<p>   
-<ul style="font-family:verdana;list-style-type:square">
- <li>Optimization and mathematical programming</li>
- <li>Optimization software and applications</li>
- <li>Interplay of optimization and machine learning </li>
- <li>Hyperbolic programming and sum-of-squares techniques</li>
- <li>Optimization in power systems, communications, and smart grids</li>
- <li>Convex analysis </li>
- <li>Interior-point methods  </li>
-</ul> 
-</p>
-</section>
-
-
-
-</div>
+    <footer>
+        <p>&copy; 2025 Mehdi Karimi | All Rights Reserved</p>
+    </footer>
 
 </body>
 </html>

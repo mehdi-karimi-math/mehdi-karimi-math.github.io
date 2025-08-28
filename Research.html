@@ -1,155 +1,135 @@
-
 <!DOCTYPE html>
-
-
-<html>
-
-
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css?ver=<?php echo rand(111,999)?>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research by Mehdi Karimi | Optimization, Machine Learning, Operations of Complex Systems">
+    <title>Research | Mehdi Karimi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body  style="background-color:white " >
+<body style="background-color:white;">
 
 <header>
-<h1>Mehdi Karimi</h1>
+    <h1>Mehdi Karimi</h1>
 </header>
 
 <nav>
-<a href="index.html"> Home </a> <br>
-<a class="active" href="Research.html"> Research </a> <br>
-<a href="papers.html"> Publications </a> <br>
-<a href="talks.html"> Talks </a> <br>
-<a href="DDS.html"> DDS Code </a> <br>
+    <a href="index.html">Home</a> <br>
+    <a class="active" href="Research.html">Research</a> <br>
+    <a href="papers.html">Publications</a> <br>
+    <a href="talks.html">Talks</a> <br>
+    <a href="DDS.html">DDS Code</a> <br>
 </nav>
 
+<div style="position: absolute; top: 100px; left: 220px">
 
-
-<div style="position: absolute;
-  top: 100px;
-  left: 220px ">
-
+<!-- Operations of Complex Systems -->
 <section>
-<h2> Convex Optimization, Domain-Driven Form </h2>
-<p>
-<font color="red">Convex optimization </font> is an important special case of mathematical optimization applications in a wide range of disciplines.
-Convex optimization's powerful and
-elegant theory has been coupled with faster and more reliable numerical linear algebra software and
-powerful computers to spread its applications over many fields such as (1) data science,(2) control theory and signal processing, 
-(3) relaxation and randomization for hard nonconvex problems, and (4) robust optimization.
-</p>
-<p>
-<pic>
-<img src="infea-str.jpg" alt="infea-start" style="width:420px;height:330px" class="center"> 
-</pic>
-
-We say a problem is in the <font color="red">Domain-Driven </font> form if the underlying convex set is given as the domain of a convex function
-which is a <font color="red"> self-concordant (s.c.) barrier</font>. We have designed and analyzed infeasible-start primal-dual interior-point algorithms for problems
-given in the Domain-Driven form. Infeasible-start means our algorithms can return the status of the given problem with robust certificates of 
-approximate optimality, unboundedness, and infeasibility.
-These algorithms are the foundation of a software packge <a href="DDS.html"> Domain-Driven Solver (DDS)</a>. 
-Even though we have meticulously implemented the Hessian-vector product for every constraint type, there are still many possibilities to explore.
-To improve the performance of DDS and invent 
-new optimization techniques, I am also working to leverage second-order information.
-
-
-</p>
-
-<!--
-<p>
-Domain-Driven means our techniques are directly applied to the given good formulation without a forced reformulation in a conic form. 
-Moreover, this approach also naturally handles the cone constraints and hence the conic form. 
-In the thesis, we showed how general the Domain-Driven setup is by providing several interesting classes 
-of examples that our code DDS also accepts as input. LP, SOCP, and SDP are covered by the Domain-Driven setup. More generally, 
-consider all convex cones with the property that both the cone and its dual admit efficiently computable self-concordant barriers. 
-Then, our Domain-Driven setup can handle any conic optimization problem formulated using direct sums of these cones and their duals. 
-Then, we show how to construct interesting convex sets as the direct sum of the epigraphs of univariate convex functions. 
-This construction, as a special case, contains problems such as geometric programming, $p$-norm optimization, and entropy programming. 
-Another interesting class of convex sets that (optimization over it) is contained in the Domain-Driven setup is the generalized 
-epigraph of a matrix norm. This, as a special case, allows us to minimize the nuclear norm over a linear subspace that has applications 
-in machine learning and big data. Domain-Driven setup contains the combination of all the above problems; for example, we can have a 
-problem with LP and SDP constraints, combined with ones defined by univariate convex functions or the epigraph of a matrix norm.
-</p>
--->
+    <h2>Operations of Complex Systems</h2>
+    <p>
+        My current research focuses on the <b>operations of complex systems</b>, with a special emphasis on 
+        <b>modern power networks</b> and <b>healthcare analytics</b>. These systems are increasingly interconnected, 
+        high-dimensional, and data-rich, requiring <b>scalable optimization algorithms</b> and 
+        <b>machine learning techniques</b> to achieve efficiency, resilience, and cost-effectiveness.
+    </p>
+    <p>
+        In our <span style="color:red;">NSF-funded project</span>, I lead a team of four graduate students 
+        to design <b>graph-based distributed optimization algorithms</b> for managing large-scale, 
+        renewable-integrated power networks. This includes <b>intelligent network partitioning</b>, 
+        decentralized decision-making, and developing robust algorithms that improve system reliability 
+        and adaptability under evolving energy paradigms.
+    </p>
+    <p>
+        In parallel, through a collaboration with <b>OSF HealthCare</b>, I co-lead an applied project 
+        with three faculty members and six students, focusing on predicting healthcare claim counts 
+        under the <b>Medicare Shared Savings Program (MSSP)</b> using <b>machine learning</b> and 
+        <b>deep learning</b>. We work with <b>real-world Social Determinants of Health (SDOH)</b> data, 
+        addressing challenges like <b>high missingness</b> and feature integration to uncover key 
+        drivers of healthcare costs and improve risk modeling.
+    </p>
 </section>
 
+<!-- Convex Optimization -->
 <section>
-<h2> Domain-Driven Solver (DDS) </h2>
-<p>
- We have released <a href="DDS.html"> DDS 2.1</a>
-in July 2022. This version is accepted for publication in Mathematical Programming Computation. DDS accepts 
-  many interesting classes of function/set constraints. You can solve several classes of convex optimization problems
- using DDS 2.1, ranging from LP and SDP to 
-quantum entorpy and hyperbolic programming. DDS is also easily expandable, and by the discovery of a s.c. barrier, 
-a new set constraint can be added to DDS. 
-</p>
+    <h2>Convex Optimization & Domain-Driven Form</h2>
+    <p>
+        <span style="color:red;">Convex optimization</span> plays a central role in my research, 
+        bridging theoretical elegance with practical applications across data science, signal processing, 
+        control theory, and robust decision-making. A major focus has been developing efficient 
+        <b>infeasible-start primal-dual interior-point methods</b> for optimization problems expressed 
+        in the <b>Domain-Driven Form</b>, where feasible regions are described via 
+        <b>self-concordant barrier functions</b>.
+    </p>
+    <p>
+        These algorithms form the foundation of my open-source solver, 
+        <a href="DDS.html">Domain-Driven Solver (DDS)</a>, which provides robust certificates of 
+        approximate optimality, infeasibility, and unboundedness. To further improve DDS performance, 
+        I’m investigating techniques leveraging <b>second-order information</b> and 
+        <b>efficient Hessian-vector products</b>.
+    </p>
 </section>
 
-  <section>
-<h2> Operations of Modern Power Networks </h2>
-<p>
- In the context of the rapidly transforming power networks, characterized by millions of controllable nodes, 
-  achieving effective solutions necessitates a comprehensive grasp of the system's complexities and advanced 
-  mathematical principles. Leveraging a fusion of optimization and engineering expertise, I aim to pioneer
-  innovative strategies, adapting new scalable optimization techniques and data-driven approaches for 
-  modern power networks. The primary goal is designing robust algorithms to heighten efficiency, reliability, 
-  and adaptability in the face of evolving, decarbonized energy paradigms.  
-</p>
-</section>
-  
+<!-- DDS Solver -->
 <section>
-<h2> Optimization of quantum entropy and quantum relative entropy </h2>
-<p>
-<pic>
-<img src="qu-inf.jpg" alt="qu-inf" style="width:350px;height:270px"> 
-</pic>
-Quantum entropy (QE) and quantum relative entropy (QRE) have applications in quantum information processing. DDS accepts 
-  constraints involving quantum entropy and quantum relative entropy 
-and significantly outperforms methods that approximate these functions by SDP constraints. A new version DDS 2.2 
-  will be released soon which has been significantly improved for solving QRE problems.  Despite acceptable performance, there is still room in DDS for performance improvement. 
-The barrier function we use in DDS for quantum relative entropy is not a proven s.c. barrier. We are currently working to prove a conjectured s.c. barrier
-for the epigraph of quantum relative entropy function.  In the application part, there are many open questions mostly related to efficiently evaluating the derivatives of the barrier (matrix)
-functions used for quantum entropy and relative entropy.
-</p>
-
+    <h2>Domain-Driven Solver (DDS)</h2>
+    <p>
+        We have released <a href="DDS.html">DDS 2.2</a>, which supports a wide range of constraints, 
+        including LP, SDP, quantum entropy, and hyperbolic programming. DDS is designed to be 
+        <b>extensible</b>; by providing a new <b>self-concordant barrier</b>, researchers can 
+        seamlessly add new constraint sets. DDS also demonstrates significant performance 
+        improvements over traditional reformulations.
+    </p>
 </section>
 
+<!-- Quantum Entropy -->
 <section>
-<h2> Hyperbolic programming </h2>
-<p>
-<pic>
-<img src="HBP.jpg" alt="qu-inf" style="width:350px;height:270px"> 
-</pic>
-Hyperbolic programming has recently attracted attention for its connection to the sum-of-squares methods and generalized Lax conjecture. 
-Accepting hyperbolic constraints is a major contribution in DDS. DDS accepts polynomials in three different formats:
- list of monomials, straight-line program, and determinantal representation. To scale DDS with the size of the input hyperbolic
- polynomials in each format, some interesting open questions have to be answered. For example, for the straight-line program,
- we are working to implement an automatic differentiation scheme for evaluating the derivatives of the polynomials. Automatic
- differentiation has been studied extensively for its applications in machine learning.
-</p>
-
+    <h2>Quantum Entropy and Quantum Relative Entropy</h2>
+    <p>
+        <img src="qu-inf.jpg" alt="Quantum Entropy" style="width:350px;height:270px;">
+        DDS supports constraints involving <b>quantum entropy</b> (QE) and 
+        <b>quantum relative entropy</b> (QRE), enabling efficient solutions for quantum 
+        information processing applications. DDS outperforms SDP-based approximations and continues 
+        to evolve to handle larger, more complex QRE problems.
+    </p>
+    <p>
+        Current efforts focus on proving a conjectured <b>self-concordant barrier</b> for the 
+        epigraph of the QRE function and improving derivative evaluation for matrix-based barrier functions.
+    </p>
 </section>
 
-
+<!-- Hyperbolic Programming -->
 <section>
-<h2> Sum-of-Squares and SDP Complexity </h2>
-<p> 
-In a very interesting theoretical project, we are using the theory of sum-of-squares of polynomials to attack the Turing machine complexity 
-of semidefinite programs (SDP). Even though an approximate solution for an SDP can be found in polynomial time and having an SDP formulation
- is desirable in many applications, very little is known about the complexity of SDP in the Turing machine model. Even the question of whether
- SDP feasibility is in the NP class or not is open. In the first part of this project, we have been studying the complexity of SDP problems
- arise form the univariate nonnegative polynomials and trying to deepen our understanding of their structure. 
-</p>
+    <h2>Hyperbolic Programming</h2>
+    <p>
+        <img src="HBP.jpg" alt="Hyperbolic Programming" style="width:350px;height:270px;">
+        Hyperbolic programming connects optimization with <b>sum-of-squares methods</b> and the 
+        <b>generalized Lax conjecture</b>. DDS supports hyperbolic constraints expressed in 
+        multiple formats: <b>monomial lists</b>, <b>straight-line programs</b>, and 
+        <b>determinantal representations</b>.
+    </p>
+    <p>
+        Ongoing work includes designing <b>automatic differentiation techniques</b> for efficiently 
+        computing derivatives of hyperbolic polynomials within DDS, leveraging ideas from 
+        machine learning to scale computations.
+    </p>
+</section>
 
-<p>
-Nonnegative polynomials and SOS problems have been studied for more than a century; however, numerous new applications
- in optimization and machine learning have made them very popular among optimizers. The SOS method has been used to
- improve guarantees for many approximations algorithms and become a new tool in computational complexity. To mention
- new applications in machine learning, this method has given new bounds for sparse vector recovery and dictionary learning.
-</p>
+<!-- Sum-of-Squares -->
+<section>
+    <h2>Sum-of-Squares and SDP Complexity</h2>
+    <p>
+        I investigate the <b>Turing machine complexity</b> of semidefinite programs (SDPs) 
+        through the theory of <b>sum-of-squares (SOS) polynomials</b). Although approximate 
+        solutions to SDPs are polynomial-time computable, the complexity of SDP feasibility 
+        in the exact arithmetic model remains open.
+    </p>
+    <p>
+        Beyond theory, SOS methods have driven advances in <b>approximation algorithms</b> 
+        and <b>machine learning</b>, including sparse recovery and dictionary learning. 
+        This line of work bridges deep mathematical structures with modern algorithmic demands.
+    </p>
 </section>
 
 </div>
-
 </body>
 </html>

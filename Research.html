@@ -3,133 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research by Mehdi Karimi | Optimization, Machine Learning, Operations of Complex Systems">
+    <meta name="description" content="Mehdi Karimi | Research | Optimization, Machine Learning, Operations of Complex Systems">
     <title>Research | Mehdi Karimi</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;}
+        body {background-color: #f9f9f9; color: #222; line-height: 1.7;}
+        header.hero {display: flex; align-items: center; justify-content: center; padding: 3rem 1rem; background: #002855; color: #fff;}
+        .hero .intro h1 {font-size: 2.2rem; margin-bottom: .5rem;}
+        nav.navbar {background-color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: .8rem 0;}
+        nav.navbar ul {display: flex; justify-content: center; list-style: none;}
+        nav.navbar ul li {margin: 0 1rem;}
+        nav.navbar ul li a {text-decoration: none; color: #002855; font-weight: 600; transition: color .2s;}
+        nav.navbar ul li a:hover, nav.navbar ul li a.active {color: #0073e6;}
+        section {padding: 3rem 10%; max-width: 1100px; margin: auto;}
+        section h2 {color: #002855; margin-bottom: 1rem;}
+        .project {margin-bottom: 2rem; padding: 1rem; border-radius: 6px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);}
+        .project h3 {color: #0073e6; margin-bottom: .5rem;}
+        footer {text-align: center; padding: 1rem; background: #002855; color: #fff; margin-top: 2rem;}
+    </style>
 </head>
-<body style="background-color:white;">
+<body>
 
-<header>
-    <h1>Mehdi Karimi</h1>
+<header class="hero">
+    <div class="intro">
+        <h1>Research</h1>
+        <p>Optimization | Machine Learning | Data-Driven Decision Making</p>
+    </div>
 </header>
 
-<nav>
-    <a href="index.html">Home</a> <br>
-    <a class="active" href="Research.html">Research</a> <br>
-    <a href="papers.html">Publications</a> <br>
-    <a href="talks.html">Talks</a> <br>
-    <a href="DDS.html">DDS Code</a> <br>
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="Research.html">Research</a></li>
+        <li><a href="papers.html">Publications</a></li>
+        <li><a href="talks.html">Talks</a></li>
+        <li><a href="DDS.html">DDS Code</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
 </nav>
 
-<div style="position: absolute; top: 100px; left: 220px">
-
-<!-- Operations of Complex Systems -->
 <section>
     <h2>Operations of Complex Systems</h2>
-    <p>
-        My current research focuses on the <b>operations of complex systems</b>, with a special emphasis on 
-        <b>modern power networks</b> and <b>healthcare analytics</b>. These systems are increasingly interconnected, 
-        high-dimensional, and data-rich, requiring <b>scalable optimization algorithms</b> and 
-        <b>machine learning techniques</b> to achieve efficiency, resilience, and cost-effectiveness.
-    </p>
-    <p>
-        In our <span style="color:red;">NSF-funded project</span>, I lead a team of four graduate students 
-        to design <b>graph-based distributed optimization algorithms</b> for managing large-scale, 
-        renewable-integrated power networks. This includes <b>intelligent network partitioning</b>, 
-        decentralized decision-making, and developing robust algorithms that improve system reliability 
-        and adaptability under evolving energy paradigms.
-    </p>
-    <p>
-        In parallel, through a collaboration with <b>OSF HealthCare</b>, I co-lead an applied project 
-        with three faculty members and six students, focusing on predicting healthcare claim counts 
-        under the <b>Medicare Shared Savings Program (MSSP)</b> using <b>machine learning</b> and 
-        <b>deep learning</b>. We work with <b>real-world Social Determinants of Health (SDOH)</b> data, 
-        addressing challenges like <b>high missingness</b> and feature integration to uncover key 
-        drivers of healthcare costs and improve risk modeling.
-    </p>
+    <div class="project">
+        <h3><i class="fas fa-bolt"></i> NSF-Funded Research on Power Networks</h3>
+        <p>
+            This project focuses on developing <b>scalable, decentralized optimization algorithms</b> for managing
+            large-scale power networks with high renewable integration. Supported by a two-year NSF grant, I lead a
+            team of four graduate students in designing advanced techniques for <b>graph-based partitioning</b>,
+            <b>distributed optimization</b>, and <b>parameter tuning</b> to improve efficiency and reliability.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3><i class="fas fa-heartbeat"></i> Healthcare & Insurance Analytics (OSF HealthCare)</h3>
+        <p>
+            Collaborating with three faculty and six students, we analyze real-world <b>Social Determinants of Health (SDOH)</b>
+            data to predict <b>Medicare Shared Savings Program (MSSP)</b> claim counts using
+            <b>machine learning</b> and <b>deep learning</b>. The project addresses significant challenges due to
+            <b>missing and incomplete SDOH data</b>, developing robust techniques for healthcare analytics and risk modeling.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3><i class="fas fa-tools"></i> Predictive Maintenance Optimization (CERL)</h3>
+        <p>
+            In collaboration with the U.S. Army Construction Engineering Research Laboratory (CERL), we develop
+            <b>reinforcement learning-based predictive maintenance strategies</b> for large-scale infrastructure.
+            The project involves integrating <b>probabilistic degradation modeling</b> with optimization techniques
+            to design cost-effective maintenance policies.
+        </p>
+    </div>
 </section>
 
-<!-- Convex Optimization -->
 <section>
-    <h2>Convex Optimization & Domain-Driven Form</h2>
-    <p>
-        <span style="color:red;">Convex optimization</span> plays a central role in my research, 
-        bridging theoretical elegance with practical applications across data science, signal processing, 
-        control theory, and robust decision-making. A major focus has been developing efficient 
-        <b>infeasible-start primal-dual interior-point methods</b> for optimization problems expressed 
-        in the <b>Domain-Driven Form</b>, where feasible regions are described via 
-        <b>self-concordant barrier functions</b>.
-    </p>
-    <p>
-        These algorithms form the foundation of my open-source solver, 
-        <a href="DDS.html">Domain-Driven Solver (DDS)</a>, which provides robust certificates of 
-        approximate optimality, infeasibility, and unboundedness. To further improve DDS performance, 
-        I’m investigating techniques leveraging <b>second-order information</b> and 
-        <b>efficient Hessian-vector products</b>.
-    </p>
+    <h2>Convex Optimization & Domain-Driven Solver (DDS)</h2>
+    <div class="project">
+        <h3><i class="fas fa-code"></i> Interior-Point Algorithms for Complex Problems</h3>
+        <p>
+            I design and analyze <b>infeasible-start primal-dual interior-point methods</b> for optimization problems in
+            the <b>Domain-Driven form</b>, where constraints are defined via self-concordant barriers. Our software package,
+            <a href="DDS.html">Domain-Driven Solver (DDS)</a>, efficiently handles LP, SOCP, SDP, hyperbolic, and entropy-based problems.
+        </p>
+    </div>
 </section>
 
-<!-- DDS Solver -->
 <section>
-    <h2>Domain-Driven Solver (DDS)</h2>
-    <p>
-        We have released <a href="DDS.html">DDS 2.2</a>, which supports a wide range of constraints, 
-        including LP, SDP, quantum entropy, and hyperbolic programming. DDS is designed to be 
-        <b>extensible</b>; by providing a new <b>self-concordant barrier</b>, researchers can 
-        seamlessly add new constraint sets. DDS also demonstrates significant performance 
-        improvements over traditional reformulations.
-    </p>
+    <h2>Optimization of Quantum Entropy</h2>
+    <div class="project">
+        <p>
+            DDS supports optimization involving <b>quantum entropy</b> and <b>quantum relative entropy</b>, outperforming
+            traditional SDP-based approximations. We are working toward proving a conjectured
+            <b>self-concordant barrier</b> for quantum relative entropy and improving derivative evaluation methods
+            for high-dimensional problems.
+        </p>
+    </div>
 </section>
 
-<!-- Quantum Entropy -->
-<section>
-    <h2>Quantum Entropy and Quantum Relative Entropy</h2>
-    <p>
-        <img src="qu-inf.jpg" alt="Quantum Entropy" style="width:350px;height:270px;">
-        DDS supports constraints involving <b>quantum entropy</b> (QE) and 
-        <b>quantum relative entropy</b> (QRE), enabling efficient solutions for quantum 
-        information processing applications. DDS outperforms SDP-based approximations and continues 
-        to evolve to handle larger, more complex QRE problems.
-    </p>
-    <p>
-        Current efforts focus on proving a conjectured <b>self-concordant barrier</b> for the 
-        epigraph of the QRE function and improving derivative evaluation for matrix-based barrier functions.
-    </p>
-</section>
-
-<!-- Hyperbolic Programming -->
 <section>
     <h2>Hyperbolic Programming</h2>
-    <p>
-        <img src="HBP.jpg" alt="Hyperbolic Programming" style="width:350px;height:270px;">
-        Hyperbolic programming connects optimization with <b>sum-of-squares methods</b> and the 
-        <b>generalized Lax conjecture</b>. DDS supports hyperbolic constraints expressed in 
-        multiple formats: <b>monomial lists</b>, <b>straight-line programs</b>, and 
-        <b>determinantal representations</b>.
-    </p>
-    <p>
-        Ongoing work includes designing <b>automatic differentiation techniques</b> for efficiently 
-        computing derivatives of hyperbolic polynomials within DDS, leveraging ideas from 
-        machine learning to scale computations.
-    </p>
+    <div class="project">
+        <p>
+            Hyperbolic programming has gained attention for its connection to <b>sum-of-squares optimization</b> and the
+            <b>generalized Lax conjecture</b>. DDS supports three polynomial representations — monomial lists,
+            straight-line programs, and determinantal formats — while we investigate
+            <b>automatic differentiation techniques</b> to efficiently compute derivatives.
+        </p>
+    </div>
 </section>
 
-<!-- Sum-of-Squares -->
 <section>
-    <h2>Sum-of-Squares and SDP Complexity</h2>
-    <p>
-        I investigate the <b>Turing machine complexity</b> of semidefinite programs (SDPs) 
-        through the theory of <b>sum-of-squares (SOS) polynomials</b). Although approximate 
-        solutions to SDPs are polynomial-time computable, the complexity of SDP feasibility 
-        in the exact arithmetic model remains open.
-    </p>
-    <p>
-        Beyond theory, SOS methods have driven advances in <b>approximation algorithms</b> 
-        and <b>machine learning</b>, including sparse recovery and dictionary learning. 
-        This line of work bridges deep mathematical structures with modern algorithmic demands.
-    </p>
+    <h2>Sum-of-Squares & SDP Complexity</h2>
+    <div class="project">
+        <p>
+            We study the <b>computational complexity</b> of semidefinite programming (SDP) through the lens of
+            <b>sum-of-squares methods</b>, exploring open questions about SDP feasibility in the Turing machine model.
+            These techniques have direct applications in <b>machine learning</b>, including
+            <b>sparse recovery</b> and <b>dictionary learning</b>.
+        </p>
+    </div>
 </section>
 
-</div>
+<footer>
+    <p>&copy; 2025 Mehdi Karimi | All Rights Reserved</p>
+</footer>
+
 </body>
 </html>

@@ -3,153 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulting and Collaboration | Mehdi Karimi | Optimization, Machine Learning, Applied AI">
     <title>Consulting & Collaboration | Mehdi Karimi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            color: #222;
-            background-color: #fff;
-        }
-
-        h1, h2 {
-            color: #1f3b73;
-        }
-
-        h1 {
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            margin-top: 30px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            margin-bottom: 16px;
-        }
-
-        ul {
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .intro {
-            font-size: 1.05em;
-        }
-
-        .contact {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #ccc;
-        }
-
-        a {
-            color: #1f3b73;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .nav {
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .nav a {
-            margin-right: 18px;
-            font-weight: bold;
-        }
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;}
+        body {background-color: #f9f9f9; color: #222; line-height: 1.6;}
+        header.hero {display: flex; align-items: center; justify-content: center; padding: 3rem 1rem; background: #002855; color: #fff;}
+        .hero img.profile-pic {border-radius: 50%; width: 180px; height: 220px; margin-right: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);}
+        .hero .intro h1 {font-size: 2.2rem; margin-bottom: .5rem;}
+        .hero .intro h3 {font-weight: 400; margin-bottom: .8rem; color: #ccc;}
+        .hero .intro a {color: #fff; text-decoration: underline;}
+        nav.navbar {background-color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: .8rem 0;}
+        nav.navbar ul {display: flex; justify-content: center; list-style: none; flex-wrap: wrap;}
+        nav.navbar ul li {margin: 0 1rem;}
+        nav.navbar ul li a {text-decoration: none; color: #002855; font-weight: 600; transition: color .2s;}
+        nav.navbar ul li a:hover, nav.navbar ul li a.active {color: #0073e6;}
+        section {padding: 3rem 10%; max-width: 1100px; margin: auto;}
+        section h2 {color: #002855; margin-bottom: 1rem;}
+        .content-block {margin-bottom: 1.5rem; padding: 1.2rem; border-radius: 6px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);}
+        .content-block h3 {color: #0073e6; margin-bottom: .6rem;}
+        ul {padding-left: 1.5rem;}
+        ul li {margin-bottom: .6rem;}
+        .contact p {margin-bottom: .5rem;}
+        .contact a {color: #0073e6; text-decoration: none;}
+        .contact a:hover {text-decoration: underline;}
+        footer {text-align: center; padding: 1rem; background: #002855; color: #fff; margin-top: 2rem;}
     </style>
 </head>
 <body>
 
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="talks.html">Talks</a>
-        <a href="dds-code.html">DDS Code</a>
-        <a href="consulting.html">Consulting & Collaboration</a>
-        <a href="contact.html">Contact</a>
-    </div>
+    <header class="hero">
+        <img src="mehdi-k.jpg" alt="Mehdi Karimi" class="profile-pic">
+        <div class="intro">
+            <h1>Consulting & Collaboration</h1>
+            <h3>Optimization | Machine Learning | Decision Support</h3>
+            <p>Applied mathematical modeling for operational decision-making</p>
+            <p>Email: <a href="mailto:mkarim3@ilstu.edu">mkarim3@ilstu.edu</a></p>
+        </div>
+    </header>
 
-    <h1>Consulting & Collaboration</h1>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Research.html">Research</a></li>
+            <li><a href="papers.html">Publications</a></li>
+            <li><a href="talks.html">Talks</a></li>
+            <li><a href="https://github.com/mehdi-karimi-math/DDS">DDS Code</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="consulting.html" class="active">Consulting & Collaboration</a></li>
+        </ul>
+    </nav>
 
-    <p class="intro">
-        I am interested in industry-facing collaborations at the intersection of optimization,
-        machine learning, and data-driven decision-making. My goal is to help organizations
-        translate complex operational challenges into structured models and practical
-        decision-support tools.
-    </p>
+    <section class="about">
+        <h2>Overview</h2>
+        <div class="content-block">
+            <p>
+                I am interested in industry-facing collaborations at the intersection of optimization,
+                machine learning, and data-driven decision-making. My goal is to help organizations
+                translate complex operational challenges into structured models and practical
+                decision-support tools.
+            </p>
+            <p>
+                My academic work focuses on rigorous and scalable methods for optimization, AI,
+                and networked systems. In applied settings, I am especially interested in projects
+                where mathematical modeling and computation can improve operational decisions,
+                reduce manual effort, and support more systematic planning.
+            </p>
+        </div>
+    </section>
 
-    <p>
-        My academic work focuses on rigorous and scalable methods for optimization, AI,
-        and networked systems. In applied settings, I am especially interested in projects
-        where mathematical modeling and computation can improve operational decisions,
-        reduce manual effort, and support more systematic planning.
-    </p>
+    <section class="projects">
+        <h2>Areas of Interest</h2>
+        <div class="content-block">
+            <ul>
+                <li>Staffing and scheduling optimization</li>
+                <li>Spreadsheet-to-decision workflows</li>
+                <li>Forecasting to operations</li>
+                <li>Resource allocation and operational planning</li>
+                <li>Networked and graph-based decision problems</li>
+                <li>Prototype development for optimization-based decision support</li>
+            </ul>
+        </div>
+    </section>
 
-    <h2>Areas of Interest</h2>
-    <ul>
-        <li>Staffing and scheduling optimization</li>
-        <li>Spreadsheet-to-decision workflows</li>
-        <li>Forecasting to operations</li>
-        <li>Resource allocation and operational planning</li>
-        <li>Networked and graph-based decision problems</li>
-        <li>Prototype development for optimization-based decision support</li>
-    </ul>
+    <section class="projects">
+        <h2>Example Collaboration Style</h2>
+        <div class="content-block">
+            <p>
+                A typical engagement may begin with an existing spreadsheet-based or manual planning workflow.
+                I can help formulate the underlying decision problem, build a mathematical model, and develop
+                a prototype that produces recommendations under real operational constraints.
+            </p>
+            <p>
+                Examples of possible prototype directions include assigning staff across shifts subject to availability
+                and coverage requirements, allocating resources across locations under demand and capacity constraints,
+                converting forecasts into operational decisions, and building scenario-analysis tools for planning
+                under uncertainty.
+            </p>
+        </div>
+    </section>
 
-    <h2>Example Collaboration Style</h2>
-    <p>
-        A typical engagement may begin with an existing spreadsheet-based or manual planning workflow.
-        I can help formulate the underlying decision problem, build a mathematical model, and develop
-        a prototype that produces recommendations under real operational constraints.
-    </p>
+    <section class="projects">
+        <h2>What I Offer</h2>
+        <div class="content-block">
+            <ul>
+                <li>Exploratory conversations about operational decision problems</li>
+                <li>Proof-of-concept prototype development</li>
+                <li>Short-term applied modeling and coding projects</li>
+                <li>University-industry collaboration opportunities</li>
+                <li>Grant-supported applied research partnerships</li>
+            </ul>
+        </div>
+    </section>
 
-    <p>
-        Examples of possible prototype directions include staffing across shifts subject to availability
-        and coverage requirements, allocating resources across locations under demand and capacity constraints,
-        converting forecasts into operational decisions, and building scenario-analysis tools for planning
-        under uncertainty.
-    </p>
+    <section class="about">
+        <h2>Background</h2>
+        <div class="content-block">
+            <p>
+                My background is in applied mathematics, optimization, machine learning, and engineering.
+                I hold PhDs in both mathematics and electrical engineering, and my work spans theory,
+                algorithms, software, and real-world applications in operations research, power systems,
+                and engineering analytics.
+            </p>
+            <p>
+                In addition to my academic research, I am interested in focused applied collaborations
+                where advanced modeling and computation can support practical decision-making in industry.
+            </p>
+        </div>
+    </section>
 
-    <h2>What I Offer</h2>
-    <ul>
-        <li>Exploratory conversations about operational decision problems</li>
-        <li>Proof-of-concept prototype development</li>
-        <li>Short-term applied modeling and coding projects</li>
-        <li>University-industry collaboration opportunities</li>
-        <li>Grant-supported applied research partnerships</li>
-    </ul>
-
-    <h2>Background</h2>
-    <p>
-        My background is in applied mathematics, optimization, machine learning, and engineering.
-        I hold PhDs in both mathematics and electrical engineering, and my work spans theory,
-        algorithms, software, and real-world applications in operations research, power systems,
-        and engineering analytics.
-    </p>
-
-    <div class="contact">
+    <section class="contact">
         <h2>Contact</h2>
-        <p>
-            If your team is exploring an operational planning or decision-support problem and would
-            like to discuss a possible collaboration, please feel free to reach out.
-        </p>
-        <p>
-            <strong>Email:</strong> <a href="mailto:mkarim3@ilstu.edu">mkarim3@ilstu.edu</a>
-        </p>
-    </div>
+        <div class="content-block">
+            <p>
+                If your team is exploring an operational planning or decision-support problem and would
+                like to discuss a possible collaboration, please feel free to reach out.
+            </p>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:mkarim3@ilstu.edu">mkarim3@ilstu.edu</a></p>
+            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/mehdi-karimi-91324b115/" target="_blank">linkedin.com/in/mehdi-karimi-91324b115</a></p>
+            <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/mehdi-karimi-math" target="_blank">github.com/mehdi-karimi-math</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mehdi Karimi | All Rights Reserved</p>
+    </footer>
 
 </body>
 </html>
